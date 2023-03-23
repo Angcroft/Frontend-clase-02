@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+        <title>Sketch 03</title>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Index</a>
+            <a href="sketch01.html">Sketch-1</a>
+            <a href="sketch02.html">Sketch-2</a>
+            <a href="sketch03.html">Sketch-3</a>
+            <a href="extra.html">Extra</a>
+        </nav>
+        <main></main>
+        <aside>
+            <p></p>
+        </aside>
+        <script>
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                selectAll("a")[3].addClass("aqui");
+                var donde = select("p");
+                elSlider = createSlider(0, 360, 0).parent(donde);
+                colorMode(HSB, 360, 100, 100);
+            }
+
+            function draw() {
+                background(elSlider.value(), 222, 185);
+                text("H " + elSlider.value() + "° S 100% B 100%", windowWidth - 200, windowHeight - 50);
+            }
+        </script>
+    </body>
+</html>
